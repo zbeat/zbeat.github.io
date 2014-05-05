@@ -53,12 +53,11 @@
 
 <script language="JavaScript">
 if (window.location.protocol == "https:") {
-	var protocol = "https://";
+	var myProtocol = "https://";
 }
 else {
-	var protocol = "http://";
+	var myProtocol = "http://";
 }
-
-window.frames['seeclickfix-map'].document.location.href = protocol + "seeclickfix.com/map_widgets/4422";
-alert(window.location.protocol);
+window.frames['seeclickfix-map'].document.location.href = myProtocol + "seeclickfix.com/map_widgets/4422";
+alert(myProtocol);
 </script>
