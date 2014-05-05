@@ -19,7 +19,7 @@
 <p>Our staff responds to these requests during regular business hours. If this report comes in on a holiday, weekend or after-hours, it will be read on the next business day. PLEASE NOTE: <strong>SeeClickFix</strong> is not to be used for emergencies. For urgent matters that require immediate attention or a police response, call 9-1-1.</p>
 
 <div style="width:98%;">
-	<iframe id="seeclickfix-map" style="display: block; margin: 0 auto; padding: 5px; width: 90%; height: 650px; border: 1px solid #ddd; box-shadow: 2px 2px 2px #aaa; border-radius: 3px;"></iframe>
+	<iframe id="seeclickfix" style="display: block; margin: 0 auto; padding: 5px; width: 90%; height: 650px; border: 1px solid #ddd; box-shadow: 2px 2px 2px #aaa; border-radius: 3px;"></iframe>
 </div>
 
 <p>...</p>
@@ -58,7 +58,7 @@ if (window.location.protocol == "https:") {
 else {
 	var myProtocol = "http://";
 }
-window.frames['seeclickfix-map'].document.location.href = myProtocol + "seeclickfix.com/map_widgets/4422";
+window.frames['seeclickfix'].document.location.href = myProtocol + "seeclickfix.com/map_widgets/4422";
 //alert("iframe src: " + window.frames['seeclickfix-map'].document.location.href);
 alert("iframe src: " + myProtocol + "seeclickfix.com/map_widgets/4422");
 </script>
