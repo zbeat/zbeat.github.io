@@ -48,9 +48,6 @@
 	</div>
 </div>
 
-
-<iframe id="testIframe" scrolling="no" frameborder="0" src="" width="800" height="600"></iframe>
-
 <script language="JavaScript">
 if (window.location.protocol == "https:") {
 	var myProtocol = "https://";
@@ -59,6 +56,6 @@ else {
 	var myProtocol = "http://";
 }
 window.frames['seeclickfix'].document.location.href = myProtocol + "seeclickfix.com/map_widgets/4422";
-//alert("iframe src: " + window.frames['seeclickfix-map'].document.location.href);
-alert("iframe src: " + myProtocol + "seeclickfix.com/map_widgets/4422");
+alert("<iframe> src: " + window.frames['seeclickfix-map'].document.location.href);
+//alert("iframe src: " + myProtocol + "seeclickfix.com/map_widgets/4422");
 </script>
