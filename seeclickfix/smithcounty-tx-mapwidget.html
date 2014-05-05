@@ -53,9 +53,12 @@
 
 <script language="JavaScript">
 if (window.location.protocol == "https:") {
-	window.frames['seeclickfix-map'].document.location.href = "https://seeclickfix.com/map_widgets/4422";
+	var protocol = "https://";
 }
 else {
-	window.frames['seeclickfix-map'].document.location.href = "http://seeclickfix.com/map_widgets/4422";
+	var protocol = "http://";
 }
+
+window.frames['seeclickfix-map'].document.location.href = protocol + "seeclickfix.com/map_widgets/4422";
+alert(window.location.protocol);
 </script>
