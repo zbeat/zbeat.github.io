@@ -49,6 +49,9 @@
 </div>
 
 <script language="JavaScript">
+alert("window.frames['seeclickfix-map'].document.location.href: " + window.frames['seeclickfix-map'].document.location.href + '\n');
+alert("window.location.protocol: " + window.location.protocol + '\n');
+
 if (window.location.protocol == "https:") {
 	var myProtocol = "https://";
 }
@@ -56,6 +59,4 @@ else {
 	var myProtocol = "http://";
 }
 window.frames['seeclickfix'].document.location.href = myProtocol + "seeclickfix.com/map_widgets/4422";
-alert("<iframe> src: " + window.frames['seeclickfix-map'].document.location.href);
-//alert("iframe src: " + myProtocol + "seeclickfix.com/map_widgets/4422");
 </script>
