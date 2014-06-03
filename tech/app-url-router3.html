@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>App URL Router</title>
+<script>
+
+var URL = "seeclickfix://home";
+//var PLAY = "market://details?id=com.seeclickfix.ma.android";
+var PLAY = "https://play.google.com/store/apps/details?id=com.seeclickfix.ma.android";
+//var ITUNES = "itms://itunes.apple.com/us/app/seeclickfix/id322000552?mt=8";
+var ITUNES = "https://itunes.apple.com/us/app/seeclickfix/id322000552?mt=8";
+var QR = "http://zbeat.github.io/tech/app-url-router3.html"; // this should be a shortened link back to this page
+
+function onLoad() {
+
+    if (navigator.userAgent.match(/Android/)) {
+
+        if (navigator.userAgent.match(/Chrome/)) {
+
+            // Jelly Bean with Chrome browser
+            setTimeout(function() {
+                if (!document.webkitHidden)
+                    window.location = MARKET;
+            }, 1000);
+
+            window.location = URL;
+
+        } else {
+
+            // Older Android browser
+            var iframe = document.createElement("iframe");
+            iframe.style.border = "none";
+            iframe.style.width = "1px";
+            iframe.style.height = "1px";
+            var t = setTimeout(function() {
+                window.location = MARKET;
+            }, 1000);
+            iframe.onload = function () { clearTimeout(t) };
+            iframe.src = URL;
+            document.body.appendChild(iframe);
+
+        }
+
+     } else if (navigator.userAgent.match(/iPhone|iPad|iPod/)) {
+
+         // IOS
+         setTimeout(function() {
+             if (!document.webkitHidden)
+                 window.location = ITUNES;
+         }, 25);
+
+         window.location = URL;
+
+     } else {
+
+         // Not mobile
+         var img = document.createElement("img");
+         img.src = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl="+encodeURIComponent(QR);
+         document.body.appendChild(img);
+     }
+}
+</script>
+  </head>
+  <body onload="onLoad()">
+  </body>
+</html>
