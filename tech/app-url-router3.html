@@ -20,7 +20,7 @@ function onLoad() {
             // Jelly Bean with Chrome browser
             setTimeout(function() {
                 if (!document.webkitHidden)
-                    window.location = MARKET;
+                    window.location = PLAY;
             }, 1000);
 
             window.location = URL;
@@ -33,7 +33,7 @@ function onLoad() {
             iframe.style.width = "1px";
             iframe.style.height = "1px";
             var t = setTimeout(function() {
-                window.location = MARKET;
+                window.location = PLAY;
             }, 1000);
             iframe.onload = function () { clearTimeout(t) };
             iframe.src = URL;
