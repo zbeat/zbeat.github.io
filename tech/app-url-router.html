@@ -17,11 +17,12 @@ if (navigator.appVersion.indexOf('iPhone') > -1) {
   }, 25);
   window.location = 'seeclickfix://';
 }
-else if (navigator.userAgent.indexOf('Android') > -1) {
+// else if (navigator.userAgent.indexOf('Android') > -1) {
+else if (navigator.userAgent.indexOf('Chrome') > -1) {
   var iframe = document.createElement('iframe');
   iframe.style.visibility = 'hidden';
   iframe.src = 'seeclickfix://';
-  iframe.onload = function noapp() { window.location="market://details?id=com.seeclickfix.ma.android"; };
+  iframe.onload = function noapp() { window.location="https://play.google.com/store/apps/details?id=com.seeclickfix.ma.android"; };
   document.body.appendChild(iframe);
 }
 </script>
