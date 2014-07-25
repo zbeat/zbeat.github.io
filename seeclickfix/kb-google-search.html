@@ -1,19 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JSON/Atom Custom Search API Example</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://zbeat.github.io/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="http://zbeat.github.io/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
   </head>
   <body>
+	Search for "chicken": <b>0 results returned.</b> Here are some local Google results instead:
     <div id="content"></div>
-    <script>
+    <ul>
+	<script>
       function hndlr(response) {
       for (var i = 0; i < response.items.length; i++) {
         var item = response.items[i];
         // in production code, item.htmlTitle should have the HTML entities escaped.
-        document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
+        document.getElementById("content").innerHTML += "<li><a href=\"" + item.link + "\" target=\"_blank\">" + item.htmlTitle + "</a> [" + item.displayLink + "]</li>";
       }
     }
     </script>
-    <script src="https://www.googleapis.com/customsearch/v1?key=<span class="apiparam">AIzaSyAbDB1FD5-cFetrCaybW5KNWHqKKG2qmo8</span>&amp;cx=017576662512468239146:omuauf_lfve&amp;q=chicken&amp;callback=hndlr">
-    </script>
+	</ul>
+	<script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyAbDB1FD5-cFetrCaybW5KNWHqKKG2qmo8&cx=017576662512468239146:omuauf_lfve&q=chicken+'Houston, TX'&callback=hndlr"></script>
   </body>
 </html>
