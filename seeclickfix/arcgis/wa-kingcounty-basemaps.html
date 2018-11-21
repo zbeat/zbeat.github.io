@@ -31,7 +31,10 @@
 <script>
   var map = L.map('map').setView([47.5342, -122.1138], 16);
   
-  L.esri.basemapLayer('Topographic').addTo(map);
+  // L.esri.basemapLayer('Topographic').addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+             }).addTo(map);
 </script>
 
 </body>
